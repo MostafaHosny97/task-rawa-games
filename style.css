@@ -1,0 +1,500 @@
+/* Resetting default margin, padding, and box-sizing for all elements */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Inheriting font size and weight for headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Setting box-sizing and border properties for all elements */
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb; /* Default border color */
+}
+
+/* Removing spacing between table cells */
+table {
+  border-spacing: 0;
+}
+
+/* Styling checkboxes */
+[type='checkbox'] {
+  /* Removing default checkbox appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  /* Checkbox size and color */
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  height: 1rem;
+  width: 1rem;
+  color: #2563eb; /* Checkbox color */
+  background-color: #fff; /* Checkbox background color */
+  border-color: #6b7280; /* Checkbox border color */
+  border-width: 1px;
+}
+
+/* Styling checked checkboxes */
+[type='checkbox']:checked {
+  /* Custom background image for checked state */
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+  background-color: currentColor;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Setting font family and removing default margin and padding for the body */
+body {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling the main grid container */
+.main {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  position: relative;
+  height: 100vh; 
+}
+
+/* Styling the sidebar */
+.main .sideBar {
+  background-color: black;
+  color: white;
+  grid-column: span 1 / span 1;
+  padding-inline-start: 1.25rem;
+  padding-inline-end: 4rem;
+}
+
+/* Styling the logo section in the sidebar */
+.main .sideBar .logo {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.25rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Styling the logo text */
+.main .sideBar .logo h2 {
+  color: #57ACDC;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Styling the logo img in the sidebar */
+.main .sideBar .logo img {
+  width: 1.5rem;
+  padding-top: 0.25rem;
+}
+
+/* Styling the file section in the sidebar */
+.main .sideBar .file {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #57ACDC;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+/* Styles for the navigation links in the sidebar */
+.main .sideBar .navigate {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* Style for the first navigation link */
+.main .sideBar .navigate1 {
+  color: #57ACDC;
+}
+
+/* Style for the second navigation link */
+.main .sideBar .navigate2 {
+  color: #939393;
+}
+
+/* Style for the decorative element next to the first navigation link */
+.main .sideBar .navigate1>div {
+  position: absolute;
+  width: 0.35rem;
+  inset-inline-start: 0px;
+  height: 1.5rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  background-color: #57ACDC;
+}
+
+.main .sideBar .navigate1 h5 {
+  font-weight: 700;
+  cursor: pointer;
+
+}
+
+.main .sideBar .navigate2 h5 {
+  cursor: pointer;
+
+}
+
+/* Style for the horizontal line between navigation and storage sections */
+.main .sideBar .line {
+  width: 100%;
+  height: 0.01rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  background-color: #202020;
+}
+
+/* Styles for the storage section in the sidebar */
+.main .sideBar .storage {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: #939393;
+  font-size: 0.875rem;
+
+}
+
+.main .sideBar .storage h5 {
+  cursor: pointer;
+}
+
+/* Styles for the storage box element */
+.main .sideBar .storageBox {
+  background-color: #1E1E1E;
+  padding: 1.25rem;
+  width: fit-content;
+  border-radius: 0.5rem;
+
+}
+
+.main .sideBar .storageBox .progress-bar {
+  background:
+    radial-gradient(closest-side, #1E1E1E 79%, transparent 80% 100%),
+    conic-gradient(#57ACDC 10%, #121212 0);
+  width: 100px;
+  height: 100px;
+  border-radius: 9999px;
+  position: relative;
+
+}
+
+.main .sideBar .storageBox .progress-bar span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #57ACDC;
+  font-weight: 600;
+}
+
+/* Styles for the storage capacity indicator */
+.main .sideBar .storageBox .gigs {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #939393;
+  margin-top: 1rem;
+}
+
+/* Styles for the right content section within the main container */
+.main .rightContent {
+  background-color: #1E1E1E;
+  grid-column: span 6 / span 6;
+  padding: 2rem;
+}
+
+/* Styles for the header section within the right content */
+.main .rightContent .header {
+  grid-column: span 6 / span 6;
+  background-color: #1E1E1E;
+  color: #939393;
+  position: relative;
+}
+
+.main .rightContent .header .top {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+
+}
+
+.main .rightContent .header .top>div {
+  display: grid;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Styles for the left input section within the top section of the header */
+.main .rightContent .header .top>div .leftInput {
+  grid-column: span 6 / span 6;
+  position: relative;
+}
+
+.main .rightContent .header .top>div .leftInput input {
+  font-size: 0.9rem;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  border: 1px solid #939393;
+  border-radius: 0.5rem;
+  background-color: transparent;
+}
+
+.main .rightContent .header .top>div .leftInput svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main .rightContent .header .top>div .leftInput .svg1 {
+  left: 0.5rem;
+
+}
+
+.main .rightContent .header .top>div .leftInput .svg2 {
+  right: 0.5rem;
+}
+
+.main .rightContent .header .top>div .rightInput {
+  grid-column: span 4 / span 4;
+  position: relative;
+}
+
+.main .rightContent .header .top>div .rightInput .link{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.main .rightContent .header .top>div .rightInput h3 {
+  font-size: 0.875rem;
+  width: 100%;
+  padding: 0.5rem 2.8rem;
+  border: 1px dashed #939393;
+  border-radius: 0.5rem;
+  background-color: transparent;
+}
+
+.main .rightContent .header .top>div .rightInput h3 span {
+  color: #57ACDC;
+}
+
+.main .rightContent .header .top>div .rightInput svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+  top: 50%;
+
+}
+
+.main .rightContent .header .top>div .account {
+  grid-column: span 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.main .rightContent .header .top>div .account svg {
+  cursor: pointer;
+}
+
+.main .rightContent .header .paragraph {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-inline-end: 0.75rem;
+
+}
+
+.main .rightContent .header .para1 h5 {
+  color: white;
+}
+
+.main .rightContent .header .line-after {
+  background-color: #393838;
+  width: 100%;
+  height: 0.10rem;
+}
+
+.main .rightContent .header .para2>h5 {
+  color: #939393;
+  font-size: 0.9rem;
+
+}
+
+.main .rightContent .header .para2 .pipeLine {
+  border: #393838 solid 1px;
+  border-top: none;
+  border-bottom: none;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+
+.main .rightContent .header .para2 .leftContent {
+  display: flex;
+  align-items: center;
+  gap: 0.12rem;
+}
+
+.main .rightContent .header .para2 .leftContent svg {
+  position: relative;
+}
+
+.main .rightContent .header .para2 .leftContent svg::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: red;
+  width: 1.5px;
+  height: 50px;
+}
+
+.main .rightContent .header .para2 .leftContent h5 {
+  color: #939393;
+  font-size: 0.9rem;
+  margin-right: 8px;
+}
+
+.main .rightContent .Table {
+  text-align: start;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 3.5rem;
+}
+
+.main .rightContent .Table table {
+  width: 100%;
+  color: #939393;
+  font-size: 0.875rem;
+}
+
+.main .rightContent .Table .arrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.main .rightContent .Table table .chekbox {
+  text-align: start;
+  padding-inline-start: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+
+}
+
+.main .rightContent .Table table .input {
+  background-color: transparent;
+  border-radius: 0.125rem;
+
+}
+
+.main .rightContent .Table table .bg-171717 {
+  background-color: #171717;
+}
+
+.main .rightContent .Table table .bg-1E1E1E {
+  background-color: #1E1E1E;
+}
+
+.main .rightContent .Table table thead th:not(.chekbox) {
+  text-align: start;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+
+}
+
+.main .rightContent .Table table tbody tr .td1 {
+  text-align: start;
+  padding-inline-start: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.main .rightContent .Table table tbody tr .td2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: white;
+
+}
+
+.main .rightContent .Table table tbody tr .td2WithPadding {
+  padding-inline-start: 0.75rem;
+
+}
+
+.main .rightContent .Table table tbody tr .td2>div {
+  background-color: #57ACDC;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 9999px;
+
+}
+
+.main .rightContent .Table table tbody tr .td2>img {
+  width: 1.25rem;
+  height: 1.5rem;
+
+}
+
+.main .rightContent .Table table tbody tr .tdPadding {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.main .rightContent .Table table tbody tr td:first-child {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
